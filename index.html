@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="Library/style.css">
+		<script src="Library/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Library/vue-router.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Library/axios.min.js"></script>
+		<link href="Library/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Translate Library</title>
+	</head>
+	<body onload="dialog()" style="background-color: white;">
+		<header class="header">
+			<h5 id="name"></h5>
+			<p>请按钮或输入你想知道的内容</p>
+		</header>
+
+		<div id="app">
+			<input placeholder="请输入内容" v-model="word_vol" @keyup.enter="volchang">
+			<button slot="append" @click="volchang()">查看</button>
+			<br><br>
+			<audio :src="vol_src" autoplay="autoplay" controls="controls">
+				当前浏览器不支持audio
+			</audio>
+			<br><br>
+			<table class="table align-middle table-bordered">
+				<tr class="table-light">
+					<th>中文</th>
+					<th>英文</th>
+					<th>照片</th>
+				</tr>
+				<tr v-for="(item,index) in news" :key="index">
+					<td @click="changvol(item.en)">{{item.cn}}</td>
+					<td @click="changvol(item.cn)">{{item.en}}</td>
+					<td @click="changvol(item.en)">
+						<img class="animal" :src="item.img">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+
+		<script src="Library/Bootstrap/js/bootstrap.bundle.min.js"
+			integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+		</script>
+	</body>
+	<script type="text/javascript">
+		function dialog() {
+			let text;
+			let person = prompt("请输入用户名:");
+			if (person == null || person == "") {
+				text = "无名。没事吧，我们开始学习";
+			} else {
+				text = "你好 " + person + "! 我们来学习吧";
+			}
+			document.getElementById("name").innerHTML = text;
+		}
+	</script>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#app',
+			data: {
+				news: [],
+				word_vol: '',
+				vol_src: '',
+				nowword: '',
+				GlobalOrderArray: []
+			},
+			methods: {
+				volchang() {
+					console.log('3333')
+					this.vol_src = 'http://dict.youdao.com/dictvoice?audio=' + this.word_vol
+					console.log(this.vol_src)
+				},
+				changvol: function(val) {
+					this.word_vol = val
+					this.vol_src = 'http://dict.youdao.com/dictvoice?audio=' + this.word_vol
+					console.log(this.vol_src)
+				}
+			},
+			mounted() {
+				axios.get('data/word.json')
+					.then(res => {
+						console.log("返回结果==>", res.data.word);
+						this.news = res.data.word
+					})
+					.catch(function(error) {
+						console.log(error);
+					});
+			}
+		})
+	</script>
+</html>

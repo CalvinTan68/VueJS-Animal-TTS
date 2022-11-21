@@ -1,0 +1,54 @@
+html
+{
+	user-select: none;
+}
+.text 
+{
+	font-size: 14px;  
+}		
+.item 
+{
+	padding: 18px 0; 
+}
+.header
+{
+	padding: 20px;
+	background-color: whitesmoke;
+	height: 100px;
+	text-align: center;
+	display: grid;
+	align-items: center;
+}
+#name
+{
+	letter-spacing: 1px;
+	text-align: center;
+	font-weight: bold;
+}
+#app
+{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+#app button
+{
+	border-radius: 50px;
+	border: none;
+	padding: 5px 20px 5px 20px;
+	transition: all 200ms ease-in-out;
+}
+#app button:hover
+{
+	background-color: grey;
+	color: white;
+}
+.table td
+{
+	font-weight: bold;
+	font-size: 20px;
+}
+.table img
+{
+	max-height: 80px;
+}

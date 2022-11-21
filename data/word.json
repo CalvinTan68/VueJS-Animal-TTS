@@ -1,0 +1,20 @@
+{
+  "word": [
+    {"en": "Dog", "cn": "狗", "img":"./Library/Images/dog.jpeg"},
+    {"en": "Bull", "cn": "公牛", "img":"./Library/Images/bull.jpeg"},    
+    {"en": "Horse", "cn": "马", "img":"./Library/Images/horse.jpeg"},
+    {"en": "Donkey", "cn": "驴", "img":"./Library/Images/donkey.webp"}, 
+    {"en": "Cat", "cn": "猫", "img":"./Library/Images/cat.jpeg"},
+    {"en": "Rooster", "cn": "公鸡", "img":"./Library/Images/rooster.jpeg"},
+    {"en": "Hen", "cn": "母鸡", "img":"./Library/Images/hen.jpeg"},
+    {"en": "Chicken", "cn": "小鸡", "img":"./Library/Images/chicken.jpeg"},
+    {"en": "Duck", "cn": "鸭子", "img":"./Library/Images/duck.jpeg"},
+    {"en": "Goose", "cn": "鹅", "img":"./Library/Images/goose.jpeg"},
+    {"en": "Pig", "cn": "猪", "img":"./Library/Images/pig.jpeg"},
+    {"en": "Ant", "cn": "蚂蚁", "img":"./Library/Images/ant.jpeg"},
+    {"en": "Cow", "cn": "母牛", "img":"./Library/Images/cow.jpeg"},
+    {"en": "Piggy", "cn": "小猪", "img":"./Library/Images/piggy.jpeg"},
+    {"en": "Puppy", "cn": "小狗", "img":"./Library/Images/puppy.webp"},
+    {"en": "Kitten", "cn": "小猫", "img":"./Library/Images/kitten.jpeg"}
+  ]
+}

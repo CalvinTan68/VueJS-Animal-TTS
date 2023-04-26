@@ -12,3 +12,5 @@ Used library
 
 ## Using Project
 It's free to use. I know it's basic and quite unorganized because back then, i only need to pass the exam and grade doesn't matter hehehe
+
+Just clone the repo, and it should be it
